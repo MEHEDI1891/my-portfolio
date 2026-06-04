@@ -1,158 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mehedi Portfolio</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mehedi Roni | Portfolio Stack</title>
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div id="desktop">
-
-    <!-- Hero -->
-    <div class="window active" id="hero">
-        <div class="titlebar">
-            <div class="buttons">
-                <span></span>
-                <span></span>
-                <span class="minimize"></span>
+    <div class="desktop-container" id="window-stack">
+        
+        <div class="window">
+            <div class="title-bar">
+                <button class="mac-btn close-btn"></button>
+                <button class="mac-btn min-btn" title="Minimize to next section"></button>
+                <button class="mac-btn max-btn"></button>
+                <div class="title-text">home.html — Portfolio</div>
             </div>
-            <h4>Home</h4>
+            <div class="window-content hero-layout">
+                <div class="hero-text">
+                    
+                    <h1>Hi,<br>I'm <span class="highlight">Mehedi Roni</span>,</h1>
+                    <h2>Software Engineer</h2>
+                    
+                    <p>Building high-performance applications, engineering AI systems, and scaling digital solutions. Passionate about transforming complex problems into seamless user experiences.</p>
+                    
+                    <div class="btn-group">
+                        <button class="btn btn-primary" onclick="minimizeCurrent()">My Work</button>
+                        <button class="btn btn-outline" onclick="minimizeTo('contact')">Hire Me</button>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="shape shape-1"></div>
+                    <div class="shape shape-2"></div>
+                </div>
+            </div>
         </div>
 
-        <div class="content">
-            <h1>Hi,<br>I'm <span>Mehedi</span></h1>
-            <h2>Software Engineer</h2>
-
-            <button>My Work</button>
-            <button class="outline">Hire Me</button>
+        <div class="window">
+            <div class="title-bar">
+                <button class="mac-btn close-btn"></button>
+                <button class="mac-btn min-btn"></button>
+                <button class="mac-btn max-btn"></button>
+                <div class="title-text">about.html — Portfolio</div>
+            </div>
+            <div class="window-content">
+                <h1>About <span class="highlight">Me</span></h1>
+                <div class="grid-2" style="margin-top: 30px;">
+                    <div class="card">
+                        <h3 style="margin-bottom: 15px; color: var(--accent-purple);">Professional Journey</h3>
+                        
+                        <p>I am a Software Engineer dedicated to application architecture, automation, and machine learning. I thrive at the intersection of complex back-end logic and intuitive front-end design.</p>
+                        <p>Currently, I am preparing for advanced roles in technical hubs like the Savar Export Processing Zone, continuously refining my stack to meet enterprise-level standards.</p>
+                    </div>
+                    <div class="card">
+                        <h3 style="margin-bottom: 15px; color: var(--accent-pink);">Entrepreneurial Mindset</h3>
+                        <p>Beyond code, I run a successful digital storefront for a handcrafted business, managing both its operational logistics and digital presence. This experience ensures that my technical solutions are always aligned with real-world business growth.</p>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <div class="window">
+            <div class="title-bar">
+                <button class="mac-btn close-btn"></button>
+                <button class="mac-btn min-btn"></button>
+                <button class="mac-btn max-btn"></button>
+                <div class="title-text">skills.html — Portfolio</div>
+            </div>
+            <div class="window-content">
+                <h1>Technical <span class="highlight">Arsenal</span></h1>
+                <div class="grid-3" style="margin-top: 40px;">
+                    
+                    <div class="card">
+                        <h3>Core Development</h3>
+                        <ul class="skill-list">
+                            <li>Kotlin & Android SDK</li>
+                            <li>Python & Automation</li>
+                            <li>HTML5, CSS3, JavaScript</li>
+                            <li>Software Architecture</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Data & AI</h3>
+                        <ul class="skill-list">
+                            <li>Machine Learning Models</li>
+                            <li>AI Prompt Engineering</li>
+                            <li>Data Structures</li>
+                            <li>Cryptography</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card">
+                        <h3>Tools & Workflow</h3>
+                        <ul class="skill-list">
+                            <li>Git & GitHub</li>
+                            <li>Gradle Build Systems</li>
+                            <li>Figma / UI Design</li>
+                            <li>Agile Methodologies</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="window">
+            <div class="title-bar">
+                <button class="mac-btn close-btn"></button>
+                <button class="mac-btn min-btn"></button>
+                <button class="mac-btn max-btn"></button>
+                <div class="title-text">projects.html — Portfolio</div>
+            </div>
+            <div class="window-content">
+                <h1>Featured <span class="highlight">Projects</span></h1>
+                <div class="grid-2" style="margin-top: 30px;">
+                    
+                    <div class="card">
+                        <div class="project-image">App UI Preview</div>
+                        <h3>Desopopup</h3>
+                        <p class="project-desc">A real-time mobile application designed to monitor live token price changes via external APIs. Built utilizing custom PriceMonitorService logic, XML UI layouts, and push notifications.</p>
+                        <div class="tag-group">
+                            <span class="tag tag-purple">Kotlin</span>
+                            <span class="tag tag-purple">API Integration</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="project-image">Vector Output Preview</div>
+                        <h3>AI Stock Asset Generator</h3>
+                        <p class="project-desc">Engineered a sophisticated prompt generation system to create high-demand minimalist vector icons (tech, logistics) for stock photography platforms, ensuring high acceptance rates.</p>
+                        <div class="tag-group">
+                            <span class="tag tag-pink">AI Prompts</span>
+                            <span class="tag tag-pink">Python</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="window">
+            <div class="title-bar">
+                <button class="mac-btn close-btn"></button>
+                <button class="mac-btn min-btn"></button>
+                <button class="mac-btn max-btn"></button>
+                <div class="title-text">education.html — Portfolio</div>
+            </div>
+            <div class="window-content">
+                <h1>Academic <span class="highlight">Background</span></h1>
+                <div class="timeline" style="margin-top: 40px; max-width: 600px;">
+                    
+                    <div class="timeline-item">
+                        <h3 style="color: var(--accent-purple);">B.Sc. in Software Engineering</h3>
+                        <h4 style="color: var(--text-main); font-weight: 400; margin-top: 4px;">Daffodil International University</h4>
+                        <p style="margin-top: 8px; font-size: 0.95rem;">Focusing on core engineering principles, system architecture, and information systems security.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="window" id="contact-window">
+            <div class="title-bar">
+                <button class="mac-btn close-btn"></button>
+                <button class="mac-btn min-btn" onclick="resetStack()" title="Restart Stack"></button>
+                <button class="mac-btn max-btn"></button>
+                <div class="title-text">contact.html — Portfolio</div>
+            </div>
+            <div class="window-content">
+                <h1>Let's <span class="highlight">Connect</span></h1>
+                <div class="grid-2" style="margin-top: 30px;">
+                    <div>
+                        <p>I'm always open to discussing application development, automation scripting, or new engineering opportunities.</p>
+                        
+                        <ul class="contact-links">
+                            <li>📧 mehedi@example.com</li>
+                            <li>🐙 github.com/mehedironi</li>
+                            <li>💼 linkedin.com/in/mehedironi</li>
+                            <li>📍 Savar, Dhaka, Bangladesh</li>
+                        </ul>
+                    </div>
+                    <div class="card" style="padding: 30px;">
+                        <input type="text" placeholder="Your Name">
+                        <input type="email" placeholder="Your Email">
+                        <textarea rows="4" placeholder="Your Message"></textarea>
+                        <button class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
-    <!-- About -->
-    <div class="window">
-        <div class="titlebar">
-            <div class="buttons">
-                <span></span>
-                <span></span>
-                <span class="minimize"></span>
-            </div>
-            <h4>About Me</h4>
-        </div>
-
-        <div class="content">
-            <h2>About Me</h2>
-            <p>
-                Software Engineering student passionate about AI,
-                Web Development and Machine Learning.
-            </p>
-        </div>
-    </div>
-
-    <!-- Skills -->
-    <div class="window">
-        <div class="titlebar">
-            <div class="buttons">
-                <span></span>
-                <span></span>
-                <span class="minimize"></span>
-            </div>
-            <h4>Skills</h4>
-        </div>
-
-        <div class="content">
-            <h2>Skills</h2>
-
-            <div class="skills">
-                <div>HTML</div>
-                <div>CSS</div>
-                <div>JavaScript</div>
-                <div>Python</div>
-                <div>SQL</div>
-                <div>GitHub</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Projects -->
-    <div class="window">
-        <div class="titlebar">
-            <div class="buttons">
-                <span></span>
-                <span></span>
-                <span class="minimize"></span>
-            </div>
-            <h4>Projects</h4>
-        </div>
-
-        <div class="content">
-            <h2>Projects</h2>
-
-            <div class="cards">
-                <div class="card">Project 1</div>
-                <div class="card">Project 2</div>
-                <div class="card">Project 3</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Education -->
-    <div class="window">
-        <div class="titlebar">
-            <div class="buttons">
-                <span></span>
-                <span></span>
-                <span class="minimize"></span>
-            </div>
-            <h4>Education</h4>
-        </div>
-
-        <div class="content">
-            <h2>Education</h2>
-            <p>BSc in Software Engineering</p>
-        </div>
-    </div>
-
-    <!-- Certificates -->
-    <div class="window">
-        <div class="titlebar">
-            <div class="buttons">
-                <span></span>
-                <span></span>
-                <span class="minimize"></span>
-            </div>
-            <h4>Certificates</h4>
-        </div>
-
-        <div class="content">
-            <h2>Certificates</h2>
-            <ul>
-                <li>Microsoft AI Skills</li>
-                <li>Google Certificate</li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- Contact -->
-    <div class="window">
-        <div class="titlebar">
-            <div class="buttons">
-                <span></span>
-                <span></span>
-                <span class="minimize"></span>
-            </div>
-            <h4>Contact</h4>
-        </div>
-
-        <div class="content">
-            <h2>Contact</h2>
-            <p>Email: me@example.com</p>
-        </div>
-    </div>
-
-</div>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
