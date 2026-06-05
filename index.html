@@ -7,9 +7,15 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="background"></div>
+    
+    <!-- Top Navigation Bar -->
     <nav class="top-navbar">
         <div class="nav-left">
-            <div class="logo">&lt;/&gt; MEHEDI</div>
+            <div class="logo">
+                <span class="logo-icon">&lt;/&gt;</span>
+                <span class="logo-text">MEHEDI</span>
+            </div>
         </div>
         <div class="nav-center">
             <ul class="nav-tabs">
@@ -22,244 +28,496 @@
                 <li><button class="nav-tab" data-window="6">CONTACT</button></li>
             </ul>
         </div>
+        <div class="nav-right">
+            <button class="theme-toggle" id="themeToggle">🌙</button>
+        </div>
     </nav>
 
+    <!-- Navigation Controls (Prev/Next with indicator) -->
     <div class="nav-controls">
-        <button class="nav-btn nav-prev" id="navPrev">←</button>
-        <div class="window-indicator"><span id="currentWindow">1</span>/7</div>
-        <button class="nav-btn nav-next" id="navNext">→</button>
+        <button class="nav-btn nav-prev" id="navPrev" aria-label="Previous Window" title="Previous (←)">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+        </button>
+        <div class="window-indicator">
+            <span id="currentWindow">1</span> / <span id="totalWindows">7</span>
+        </div>
+        <button class="nav-btn nav-next" id="navNext" aria-label="Next Window" title="Next (→)">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </button>
     </div>
 
+    <!-- Window Stack Container -->
     <div class="window-stack">
+        
+        <!-- Window 1: Home -->
         <div class="window active" data-window="0">
             <div class="window-header">
                 <div class="window-controls">
-                    <button class="control-btn minimize-btn"></button>
-                    <button class="control-btn maximize-btn"></button>
-                    <button class="control-btn close-btn"></button>
+                    <button class="control-btn minimize-btn" title="Minimize"></button>
+                    <button class="control-btn maximize-btn" title="Maximize"></button>
+                    <button class="control-btn close-btn" title="Close"></button>
                 </div>
                 <div class="window-title">HOME</div>
+                <div class="window-icons"></div>
             </div>
             <div class="window-content">
                 <div class="home-container">
                     <div class="home-left">
-                        <p style="font-size: 26px; margin-bottom: 8px;">Hi,</p>
-                        <h1 class="name">I'm Mehedi</h1>
-                        <h2 class="title">Software Engineer & AI Enthusiast</h2>
-                        <p style="color: rgba(224, 224, 224, 0.6); margin-bottom: 36px;">Crafting elegant solutions through code and innovation</p>
-                        <div style="display: flex; gap: 20px; margin-bottom: 50px;">
-                            <button class="btn btn-primary">My Work</button>
-                            <button class="btn btn-secondary">Hire Me</button>
+                        <div class="home-text">
+                            <p class="greeting">Hi,</p>
+                            <h1 class="name">I'm <span class="highlight">Mehedi</span></h1>
+                            <h2 class="title">Software Engineer & AI Enthusiast</h2>
+                            <p class="tagline">Crafting elegant solutions through code and innovation</p>
+                            <div class="home-buttons">
+                                <button class="btn btn-primary">My Work</button>
+                                <button class="btn btn-secondary">Hire Me</button>
+                            </div>
+                            <div class="social-links">
+                                <a href="#" class="social-icon" title="Instagram">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.057-1.645.069-4.849.069-3.204 0-3.584-.012-4.849-.069-3.259-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/></svg>
+                                </a>
+                                <a href="#" class="social-icon" title="LinkedIn">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                                </a>
+                                <a href="#" class="social-icon" title="GitHub">
+                                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="window" data-window="1">
-            <div class="window-header">
-                <div class="window-controls">
-                    <button class="control-btn minimize-btn"></button>
-                    <button class="control-btn maximize-btn"></button>
-                    <button class="control-btn close-btn"></button>
-                </div>
-                <div class="window-title">ABOUT ME</div>
-            </div>
-            <div class="window-content">
-                <h2 style="font-size: 40px; margin-bottom: 24px; background: linear-gradient(135deg, #c77dff 0%, #ff4db8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Who Am I?</h2>
-                <p style="font-size: 16px; line-height: 1.8; margin-bottom: 40px; color: rgba(224, 224, 224, 0.75);">I'm a passionate software engineer with expertise in modern web technologies and AI/ML.</p>
-                <div class="about-grid">
-                    <div class="about-card">
-                        <div class="card-number">01</div>
-                        <h3 style="font-size: 22px; margin-bottom: 14px; font-weight: 700;">Background</h3>
-                        <p>Full-stack developer with 3+ years of experience</p>
-                    </div>
-                    <div class="about-card">
-                        <div class="card-number">02</div>
-                        <h3 style="font-size: 22px; margin-bottom: 14px; font-weight: 700;">Passion</h3>
-                        <p>Driven by innovation and continuous learning</p>
-                    </div>
-                    <div class="about-card">
-                        <div class="card-number">03</div>
-                        <h3 style="font-size: 22px; margin-bottom: 14px; font-weight: 700;">Goals</h3>
-                        <p>Create impactful digital experiences</p>
-                    </div>
-                    <div class="about-card">
-                        <div class="card-number">04</div>
-                        <h3 style="font-size: 22px; margin-bottom: 14px; font-weight: 700;">Experience</h3>
-                        <p>Collaborated with startups and enterprises</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="window" data-window="2">
-            <div class="window-header">
-                <div class="window-controls">
-                    <button class="control-btn minimize-btn"></button>
-                    <button class="control-btn maximize-btn"></button>
-                    <button class="control-btn close-btn"></button>
-                </div>
-                <div class="window-title">SKILLS</div>
-            </div>
-            <div class="window-content">
-                <h3 style="font-size: 26px; margin-bottom: 28px; color: #c77dff; font-weight: 700;">Frontend</h3>
-                <div class="skills-grid">
-                    <div class="skill-card"><div style="font-size: 36px; margin-bottom: 8px;">🎨</div><span>HTML5</span><div class="progress-bar"><div class="progress" style="width: 95%"></div></div></div>
-                    <div class="skill-card"><div style="font-size: 36px; margin-bottom: 8px;">🎭</div><span>CSS3</span><div class="progress-bar"><div class="progress" style="width: 92%"></div></div></div>
-                    <div class="skill-card"><div style="font-size: 36px; margin-bottom: 8px;">⚡</div><span>JavaScript</span><div class="progress-bar"><div class="progress" style="width: 90%"></div></div></div>
-                    <div class="skill-card"><div style="font-size: 36px; margin-bottom: 8px;">⚛️</div><span>React</span><div class="progress-bar"><div class="progress" style="width: 88%"></div></div></div>
-                </div>
-                <h3 style="font-size: 26px; margin: 50px 0 28px 0; color: #c77dff; font-weight: 700;">Backend & AI/ML</h3>
-                <div class="skills-grid">
-                    <div class="skill-card"><div style="font-size: 36px; margin-bottom: 8px;">🐍</div><span>Python</span><div class="progress-bar"><div class="progress" style="width: 93%"></div></div></div>
-                    <div class="skill-card"><div style="font-size: 36px; margin-bottom: 8px;">🤖</div><span>Machine Learning</span><div class="progress-bar"><div class="progress" style="width: 85%"></div></div></div>
-                    <div class="skill-card"><div style="font-size: 36px; margin-bottom: 8px;">🔗</div><span>Node.js</span><div class="progress-bar"><div class="progress" style="width: 87%"></div></div></div>
-                    <div class="skill-card"><div style="font-size: 36px; margin-bottom: 8px;">🗄️</div><span>SQL/NoSQL</span><div class="progress-bar"><div class="progress" style="width: 89%"></div></div></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="window" data-window="3">
-            <div class="window-header">
-                <div class="window-controls">
-                    <button class="control-btn minimize-btn"></button>
-                    <button class="control-btn maximize-btn"></button>
-                    <button class="control-btn close-btn"></button>
-                </div>
-                <div class="window-title">PROJECTS</div>
-            </div>
-            <div class="window-content">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1460925895917-aeb19be489c7?w=400&h=250&fit=crop" alt="AI Dashboard">
-                    </div>
-                    <div class="project-info">
-                        <h3>AI-Powered Dashboard</h3>
-                        <p>An intelligent analytics dashboard with ML-powered insights and real-time data visualization.</p>
-                        <div style="display: flex; gap: 8px; margin: 12px 0;">
-                            <span style="background: rgba(157, 78, 221, 0.2); color: #c77dff; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 700;">React</span>
-                            <span style="background: rgba(157, 78, 221, 0.2); color: #c77dff; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 700;">Python</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=250&fit=crop" alt="E-Commerce">
-                    </div>
-                    <div class="project-info">
-                        <h3>Full-Stack E-Commerce</h3>
-                        <p>Complete e-commerce platform with payment integration and admin panel.</p>
-                        <div style="display: flex; gap: 8px; margin: 12px 0;">
-                            <span style="background: rgba(157, 78, 221, 0.2); color: #c77dff; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 700;">Next.js</span>
-                            <span style="background: rgba(157, 78, 221, 0.2); color: #c77dff; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 700;">MongoDB</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="window" data-window="4">
-            <div class="window-header">
-                <div class="window-controls">
-                    <button class="control-btn minimize-btn"></button>
-                    <button class="control-btn maximize-btn"></button>
-                    <button class="control-btn close-btn"></button>
-                </div>
-                <div class="window-title">EDUCATION</div>
-            </div>
-            <div class="window-content">
-                <div class="education-item">
-                    <div class="education-marker"></div>
-                    <div>
-                        <h3 style="font-size: 20px; font-weight: 700;">Bachelor of Science in Computer Science</h3>
-                        <p style="font-size: 15px; color: #c77dff; margin: 6px 0; font-weight: 600;">University Name</p>
-                        <p style="font-size: 14px; color: rgba(224, 224, 224, 0.6); margin-bottom: 14px;">CGPA: 3.8/4.0 • Graduated: 2023</p>
-                    </div>
-                </div>
-                <div class="education-item">
-                    <div class="education-marker"></div>
-                    <div>
-                        <h3 style="font-size: 20px; font-weight: 700;">Advanced Machine Learning Specialization</h3>
-                        <p style="font-size: 15px; color: #c77dff; margin: 6px 0; font-weight: 600;">Coursera - Stanford University</p>
-                        <p style="font-size: 14px; color: rgba(224, 224, 224, 0.6);">Completed: 2023</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="window" data-window="5">
-            <div class="window-header">
-                <div class="window-controls">
-                    <button class="control-btn minimize-btn"></button>
-                    <button class="control-btn maximize-btn"></button>
-                    <button class="control-btn close-btn"></button>
-                </div>
-                <div class="window-title">CERTIFICATES</div>
-            </div>
-            <div class="window-content">
-                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px;">
-                    <div class="cert-card">
-                        <div class="cert-image">
-                            <img src="https://images.unsplash.com/photo-1516534775068-bb6c2dc8e5a4?w=300&h=200&fit=crop" alt="AWS">
-                        </div>
-                        <div style="padding: 24px;">
-                            <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">AWS Certified Solutions Architect</h3>
-                            <p style="font-size: 14px; color: #c77dff; font-weight: 600; margin-bottom: 4px;">Amazon Web Services</p>
-                            <p style="font-size: 13px; color: rgba(224, 224, 224, 0.6);">Issued: December 2023</p>
-                        </div>
-                    </div>
-                    <div class="cert-card">
-                        <div class="cert-image">
-                            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=300&h=200&fit=crop" alt="Google">
-                        </div>
-                        <div style="padding: 24px;">
-                            <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">Google Cloud Professional Data Engineer</h3>
-                            <p style="font-size: 14px; color: #c77dff; font-weight: 600; margin-bottom: 4px;">Google Cloud</p>
-                            <p style="font-size: 13px; color: rgba(224, 224, 224, 0.6);">Issued: October 2023</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="window" data-window="6">
-            <div class="window-header">
-                <div class="window-controls">
-                    <button class="control-btn minimize-btn"></button>
-                    <button class="control-btn maximize-btn"></button>
-                    <button class="control-btn close-btn"></button>
-                </div>
-                <div class="window-title">CONTACT</div>
-            </div>
-            <div class="window-content">
-                <div class="contact-container">
-                    <div>
-                        <h2 style="font-size: 36px; margin-bottom: 18px; background: linear-gradient(135deg, #c77dff 0%, #ff4db8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800;">Get In Touch</h2>
-                        <p style="font-size: 16px; color: rgba(224, 224, 224, 0.7); margin-bottom: 36px;">I'm interested in new projects and opportunities.</p>
-                        <div style="display: flex; flex-direction: column; gap: 24px;">
-                            <div style="display: flex; gap: 18px;">
-                                <div style="font-size: 32px;">📧</div>
-                                <div>
-                                    <h4 style="font-size: 15px; font-weight: 700; margin-bottom: 4px;">Email</h4>
-                                    <a href="mailto:mehedi@example.com" style="font-size: 15px; color: rgba(224, 224, 224, 0.7); text-decoration: none;">mehedi@example.com</a>
+                    <div class="home-right">
+                        <div class="floating-cards">
+                            <div class="floating-card card-1">
+                                <div class="card-inner">
+                                    <div class="glow"></div>
+                                    <p class="card-label">Dark Mode</p>
+                                </div>
+                            </div>
+                            <div class="floating-card card-2">
+                                <div class="card-inner">
+                                    <div class="glow"></div>
+                                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=300&h=200&fit=crop" alt="workspace">
+                                </div>
+                            </div>
+                            <div class="floating-card card-3">
+                                <div class="card-inner">
+                                    <div class="glow"></div>
+                                    <div class="geometric-shape"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Window 2: About Me -->
+        <div class="window" data-window="1">
+            <div class="window-header">
+                <div class="window-controls">
+                    <button class="control-btn minimize-btn" title="Minimize"></button>
+                    <button class="control-btn maximize-btn" title="Maximize"></button>
+                    <button class="control-btn close-btn" title="Close"></button>
+                </div>
+                <div class="window-title">ABOUT ME</div>
+                <div class="window-icons"></div>
+            </div>
+            <div class="window-content">
+                <div class="about-container">
+                    <div class="about-section">
+                        <h2>Who Am I?</h2>
+                        <p>I'm a passionate software engineer with a deep interest in artificial intelligence and innovative problem-solving. With expertise in modern web technologies and AI/ML, I transform ideas into elegant, scalable solutions.</p>
+                    </div>
+                    <div class="about-grid">
+                        <div class="about-card">
+                            <div class="card-number">01</div>
+                            <h3>Background</h3>
+                            <p>Full-stack developer with 3+ years of experience building web applications and AI solutions</p>
+                        </div>
+                        <div class="about-card">
+                            <div class="card-number">02</div>
+                            <h3>Passion</h3>
+                            <p>Driven by innovation and continuous learning. I love exploring new technologies and applying them creatively</p>
+                        </div>
+                        <div class="about-card">
+                            <div class="card-number">03</div>
+                            <h3>Goals</h3>
+                            <p>To create impactful digital experiences that solve real-world problems through technology</p>
+                        </div>
+                        <div class="about-card">
+                            <div class="card-number">04</div>
+                            <h3>Experience</h3>
+                            <p>Collaborated with startups and enterprises on web apps, AI models, and cloud infrastructure</p>
+                        </div>
+                    </div>
+                    <div class="about-section">
+                        <h3>Fun Facts</h3>
+                        <ul class="facts-list">
+                            <li>🚀 Love building side projects and experimenting with new tech</li>
+                            <li>🎮 Gaming enthusiast and occasional game developer</li>
+                            <li>📚 Constant learner - reading tech blogs and research papers</li>
+                            <li>🌍 Open source contributor and community advocate</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Window 3: Skills -->
+        <div class="window" data-window="2">
+            <div class="window-header">
+                <div class="window-controls">
+                    <button class="control-btn minimize-btn" title="Minimize"></button>
+                    <button class="control-btn maximize-btn" title="Maximize"></button>
+                    <button class="control-btn close-btn" title="Close"></button>
+                </div>
+                <div class="window-title">SKILLS</div>
+                <div class="window-icons"></div>
+            </div>
+            <div class="window-content">
+                <div class="skills-container">
+                    <div class="skills-section">
+                        <h3>Frontend</h3>
+                        <div class="skills-grid">
+                            <div class="skill-card">
+                                <div class="skill-icon">🎨</div>
+                                <span>HTML5</span>
+                                <div class="progress-bar"><div class="progress" style="width: 95%"></div></div>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-icon">🎭</div>
+                                <span>CSS3</span>
+                                <div class="progress-bar"><div class="progress" style="width: 92%"></div></div>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-icon">⚡</div>
+                                <span>JavaScript</span>
+                                <div class="progress-bar"><div class="progress" style="width: 90%"></div></div>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-icon">⚛️</div>
+                                <span>React</span>
+                                <div class="progress-bar"><div class="progress" style="width: 88%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="skills-section">
+                        <h3>Backend & AI/ML</h3>
+                        <div class="skills-grid">
+                            <div class="skill-card">
+                                <div class="skill-icon">🐍</div>
+                                <span>Python</span>
+                                <div class="progress-bar"><div class="progress" style="width: 93%"></div></div>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-icon">🤖</div>
+                                <span>Machine Learning</span>
+                                <div class="progress-bar"><div class="progress" style="width: 85%"></div></div>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-icon">🔗</div>
+                                <span>Node.js</span>
+                                <div class="progress-bar"><div class="progress" style="width: 87%"></div></div>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-icon">🗄️</div>
+                                <span>SQL/NoSQL</span>
+                                <div class="progress-bar"><div class="progress" style="width: 89%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skills-section">
+                        <h3>Tools & Platforms</h3>
+                        <div class="skills-grid">
+                            <div class="skill-card">
+                                <div class="skill-icon">📚</div>
+                                <span>Git/GitHub</span>
+                                <div class="progress-bar"><div class="progress" style="width: 95%"></div></div>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-icon">☁️</div>
+                                <span>AWS/Cloud</span>
+                                <div class="progress-bar"><div class="progress" style="width: 80%"></div></div>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-icon">🐳</div>
+                                <span>Docker</span>
+                                <div class="progress-bar"><div class="progress" style="width: 82%"></div></div>
+                            </div>
+                            <div class="skill-card">
+                                <div class="skill-icon">⚙️</div>
+                                <span>DevOps</span>
+                                <div class="progress-bar"><div class="progress" style="width: 78%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Window 4: Projects -->
+        <div class="window" data-window="3">
+            <div class="window-header">
+                <div class="window-controls">
+                    <button class="control-btn minimize-btn" title="Minimize"></button>
+                    <button class="control-btn maximize-btn" title="Maximize"></button>
+                    <button class="control-btn close-btn" title="Close"></button>
+                </div>
+                <div class="window-title">PROJECTS</div>
+                <div class="window-icons"></div>
+            </div>
+            <div class="window-content">
+                <div class="projects-container">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1460925895917-aeb19be489c7?w=400&h=250&fit=crop" alt="AI Dashboard">
+                        </div>
+                        <div class="project-info">
+                            <h3>AI-Powered Dashboard</h3>
+                            <p>An intelligent analytics dashboard with ML-powered insights and real-time data visualization.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">TensorFlow</span>
+                            </div>
+                            <div class="project-buttons">
+                                <button class="btn-small">Live Demo</button>
+                                <button class="btn-small btn-outline">GitHub</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=250&fit=crop" alt="E-Commerce Platform">
+                        </div>
+                        <div class="project-info">
+                            <h3>Full-Stack E-Commerce</h3>
+                            <p>Complete e-commerce platform with payment integration, inventory management, and admin panel.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Next.js</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">MongoDB</span>
+                            </div>
+                            <div class="project-buttons">
+                                <button class="btn-small">Live Demo</button>
+                                <button class="btn-small btn-outline">GitHub</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=400&h=250&fit=crop" alt="Mobile App">
+                        </div>
+                        <div class="project-info">
+                            <h3>AI Task Manager App</h3>
+                            <p>Mobile app with AI-powered task prioritization and intelligent scheduling system.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">React Native</span>
+                                <span class="tech-tag">Firebase</span>
+                                <span class="tech-tag">ML</span>
+                            </div>
+                            <div class="project-buttons">
+                                <button class="btn-small">Live Demo</button>
+                                <button class="btn-small btn-outline">GitHub</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Window 5: Education -->
+        <div class="window" data-window="4">
+            <div class="window-header">
+                <div class="window-controls">
+                    <button class="control-btn minimize-btn" title="Minimize"></button>
+                    <button class="control-btn maximize-btn" title="Maximize"></button>
+                    <button class="control-btn close-btn" title="Close"></button>
+                </div>
+                <div class="window-title">EDUCATION</div>
+                <div class="window-icons"></div>
+            </div>
+            <div class="window-content">
+                <div class="education-container">
+                    <div class="education-item">
+                        <div class="education-marker"></div>
+                        <div class="education-content">
+                            <h3>Bachelor of Science in Computer Science</h3>
+                            <p class="university">University Name</p>
+                            <p class="details">CGPA: 3.8/4.0 • Graduated: 2023</p>
+                            <p class="description">Focused on AI, Machine Learning, and Software Engineering. Completed several capstone projects involving deep learning and web technologies.</p>
+                            <div class="achievements">
+                                <span class="achievement">Dean's List</span>
+                                <span class="achievement">Best Project Award</span>
+                                <span class="achievement">Scholarship Recipient</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="education-marker"></div>
+                        <div class="education-content">
+                            <h3>Advanced Machine Learning Specialization</h3>
+                            <p class="university">Coursera - Stanford University</p>
+                            <p class="details">Completed: 2023</p>
+                            <p class="description">Comprehensive course on advanced ML algorithms, neural networks, and practical implementations in Python.</p>
+                            <div class="achievements">
+                                <span class="achievement">Grade: 98%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="education-marker"></div>
+                        <div class="education-content">
+                            <h3>Full-Stack Web Development Bootcamp</h3>
+                            <p class="university">Online Bootcamp</p>
+                            <p class="details">Completed: 2022</p>
+                            <p class="description">Intensive program covering frontend, backend, database design, and deployment strategies.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Window 6: Certificates -->
+        <div class="window" data-window="5">
+            <div class="window-header">
+                <div class="window-controls">
+                    <button class="control-btn minimize-btn" title="Minimize"></button>
+                    <button class="control-btn maximize-btn" title="Maximize"></button>
+                    <button class="control-btn close-btn" title="Close"></button>
+                </div>
+                <div class="window-title">CERTIFICATES</div>
+                <div class="window-icons"></div>
+            </div>
+            <div class="window-content">
+                <div class="certificates-container">
+                    <div class="cert-card">
+                        <div class="cert-image">
+                            <img src="https://images.unsplash.com/photo-1516534775068-bb6c2dc8e5a4?w=300&h=200&fit=crop" alt="AWS Certificate">
+                        </div>
+                        <div class="cert-info">
+                            <h3>AWS Certified Solutions Architect</h3>
+                            <p class="issuer">Amazon Web Services</p>
+                            <p class="date">Issued: December 2023</p>
+                            <a href="#" class="verify-link">Verify Certificate →</a>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div class="cert-image">
+                            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=300&h=200&fit=crop" alt="Google Cloud Certificate">
+                        </div>
+                        <div class="cert-info">
+                            <h3>Google Cloud Professional Data Engineer</h3>
+                            <p class="issuer">Google Cloud</p>
+                            <p class="date">Issued: October 2023</p>
+                            <a href="#" class="verify-link">Verify Certificate →</a>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div class="cert-image">
+                            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=300&h=200&fit=crop" alt="React Advanced">
+                        </div>
+                        <div class="cert-info">
+                            <h3>React Advanced Patterns & Performance</h3>
+                            <p class="issuer">egghead.io</p>
+                            <p class="date">Issued: August 2023</p>
+                            <a href="#" class="verify-link">Verify Certificate →</a>
+                        </div>
+                    </div>
+
+                    <div class="cert-card">
+                        <div class="cert-image">
+                            <img src="https://images.unsplash.com/photo-1460925895917-aeb19be489c7?w=300&h=200&fit=crop" alt="ML Specialization">
+                        </div>
+                        <div class="cert-info">
+                            <h3>Deep Learning Specialization</h3>
+                            <p class="issuer">Deeplearning.AI</p>
+                            <p class="date">Issued: June 2023</p>
+                            <a href="#" class="verify-link">Verify Certificate →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Window 7: Contact -->
+        <div class="window" data-window="6">
+            <div class="window-header">
+                <div class="window-controls">
+                    <button class="control-btn minimize-btn" title="Minimize"></button>
+                    <button class="control-btn maximize-btn" title="Maximize"></button>
+                    <button class="control-btn close-btn" title="Close"></button>
+                </div>
+                <div class="window-title">CONTACT</div>
+                <div class="window-icons"></div>
+            </div>
+            <div class="window-content">
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h2>Get In Touch</h2>
+                        <p>I'm always interested in hearing about new projects and opportunities. Feel free to reach out!</p>
+                        
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon">📧</div>
+                                <div>
+                                    <h4>Email</h4>
+                                    <a href="mailto:mehedi@example.com">mehedi@example.com</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">📱</div>
+                                <div>
+                                    <h4>Phone</h4>
+                                    <a href="tel:+1234567890">+1 (234) 567-890</a>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">📍</div>
+                                <div>
+                                    <h4>Location</h4>
+                                    <p>Bangladesh / Remote</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="social-links-contact">
+                            <a href="#" class="social-btn">GitHub</a>
+                            <a href="#" class="social-btn">LinkedIn</a>
+                            <a href="#" class="social-btn">Twitter</a>
+                            <a href="#" class="social-btn">Facebook</a>
+                        </div>
+                    </div>
+
                     <div class="contact-form">
                         <form>
                             <div class="form-group">
-                                <label>Name</label>
-                                <input type="text" required>
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
                             </div>
                             <div class="form-group">
-                                <label>Email</label>
-                                <input type="email" required>
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
                             </div>
                             <div class="form-group">
-                                <label>Message</label>
-                                <textarea rows="5" required></textarea>
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" name="subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary">Send Message</button>
                         </form>
@@ -267,6 +525,7 @@
                 </div>
             </div>
         </div>
+
     </div>
 
     <script src="script.js"></script>
