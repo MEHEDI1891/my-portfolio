@@ -3,244 +3,270 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mehedi Hasan Tuhin| Professional Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Mehedi - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <div class="desktop-container" id="window-stack">
-        
-        <div class="window">
-            <div class="title-bar">
-                <div class="mac-btns">
-                    <button class="mac-btn close-btn"></button>
-                    <button class="mac-btn min-btn" onclick="nextWindow()"></button>
-                    <button class="mac-btn max-btn"></button>
-                </div>
-                <div class="address-bar">
-                    <span>Mehedi Hasan Tuhin- Home</span>
-                </div>
-                <div class="mac-actions"></div>
-            </div>
-
-            <div class="window-content hero-layout">
-                <nav class="inner-nav">
-                    <div class="logo"><span class="code-icon">&lt;/&gt;</span> MEHEDI</div>
-                    <div class="nav-links">
-                        <a href="#" onclick="goToWindow(0)">HOME</a>
-                        <a href="#" onclick="goToWindow(3)">PROJECTS</a>
-                        <a href="#" onclick="goToWindow(6)">CONTACT</a>
-                    </div>
-                </nav>
-
-                <div class="hero-body">
-                    <div class="social-sidebar">
-                        <div class="vertical-line"></div>
-                        <a href="#" class="social-icon">IN</a>
-                        <a href="#" class="social-icon">GH</a>
-                        <a href="#" class="social-icon">FB</a>
-                    </div>
-
-                    <div class="hero-text">
-                        <h1>Hi,<br>I'm Mehedi,</h1>
-                        <h1 class="highlight">Software Engineer</h1>
-                        <p class="subtitle">Android Developer / Python / AI Prompting / Web</p>
-                        
-                        <div class="btn-group">
-                            <button class="btn btn-primary" onclick="nextWindow()">My Work</button>
-                            <button class="btn btn-outline" onclick="goToWindow(6)">Hire Me</button>
-                        </div>
-                    </div>
-
-                    <div class="hero-visual">
-                        <div class="floating-phone">
-                            <div class="phone-header">Dark Mode</div>
-                            <div class="phone-sub">Background: #1A2A46<br>Accent: #1F1E33</div>
-                            <div class="glass-panel panel-1"></div>
-                            <div class="glass-panel panel-2">25</div>
-                            <div class="glass-panel panel-3"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <nav class="top-navbar">
+        <div class="nav-left">
+            <div class="logo">&lt;/&gt; MEHEDI</div>
         </div>
-
-        <div class="window">
-            <div class="title-bar">
-                <div class="mac-btns">
-                    <button class="mac-btn close-btn"></button>
-                    <button class="mac-btn min-btn" onclick="nextWindow()"></button>
-                    <button class="mac-btn max-btn"></button>
-                </div>
-                <div class="address-bar"><span>Mehedi Hasan Tuhin- About</span></div>
-            </div>
-            <div class="window-content generic-content">
-                <h1 style="font-size: 3rem;">About <span class="highlight">Me</span></h1>
-                <div class="content-grid" style="margin-top: 30px;">
-                    <div class="premium-card">
-                        <h3 class="card-title">Professional Journey</h3>
-                        <p class="card-text">Software Engineer dedicated to application architecture, automation, and machine learning. I thrive at the intersection of complex back-end logic and intuitive front-end design.</p>
-                    </div>
-                    <div class="premium-card">
-                        <h3 class="card-title">Entrepreneurial Mindset</h3>
-                        <p class="card-text">Beyond code, I run a successful digital storefront for a handcrafted business, ensuring my technical solutions align with real-world business growth and user engagement.</p>
-                    </div>
-                </div>
-            </div>
+        <div class="nav-center">
+            <ul class="nav-tabs">
+                <li><button class="nav-tab active" data-window="0">HOME</button></li>
+                <li><button class="nav-tab" data-window="1">ABOUT ME</button></li>
+                <li><button class="nav-tab" data-window="2">SKILLS</button></li>
+                <li><button class="nav-tab" data-window="3">PROJECTS</button></li>
+                <li><button class="nav-tab" data-window="4">EDUCATION</button></li>
+                <li><button class="nav-tab" data-window="5">CERTIFICATES</button></li>
+                <li><button class="nav-tab" data-window="6">CONTACT</button></li>
+            </ul>
         </div>
+    </nav>
 
-        <div class="window">
-            <div class="title-bar">
-                <div class="mac-btns">
-                    <button class="mac-btn close-btn"></button>
-                    <button class="mac-btn min-btn" onclick="nextWindow()"></button>
-                    <button class="mac-btn max-btn"></button>
-                </div>
-                <div class="address-bar"><span>Mehedi Hasan Tuhin- Skills</span></div>
-            </div>
-            <div class="window-content generic-content">
-                <h1 style="font-size: 3rem;">Technical <span class="highlight">Skills</span></h1>
-                <div class="skills-container" style="margin-top: 40px;">
-                    <div class="skill-item">
-                        <div class="skill-info"><span>Kotlin & Android SDK</span><span>90%</span></div>
-                        <div class="progress-bar"><div class="progress" style="width: 90%;"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info"><span>Python & Automation</span><span>85%</span></div>
-                        <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info"><span>AI Prompt Engineering</span><span>95%</span></div>
-                        <div class="progress-bar"><div class="progress highlight-bg" style="width: 95%;"></div></div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info"><span>Software Architecture</span><span>80%</span></div>
-                        <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="window">
-            <div class="title-bar">
-                <div class="mac-btns">
-                    <button class="mac-btn close-btn"></button>
-                    <button class="mac-btn min-btn" onclick="nextWindow()"></button>
-                    <button class="mac-btn max-btn"></button>
-                </div>
-                <div class="address-bar"><span>Mehedi Hasan Tuhin- Projects</span></div>
-            </div>
-            <div class="window-content generic-content">
-                <h1 style="font-size: 3rem;">Featured <span class="highlight">Projects</span></h1>
-                <div class="content-grid" style="margin-top: 30px;">
-                    <div class="premium-card project-card">
-                        <div class="project-img">Desopopup App Preview</div>
-                        <h3 class="card-title">Desopopup (Live Crypto Tracker)</h3>
-                        <p class="card-text">Real-time mobile app to monitor live token price changes via external APIs. Custom PriceMonitorService logic & push notifications.</p>
-                        <div class="tags"><span class="tag">Kotlin</span><span class="tag">API</span></div>
-                    </div>
-                    <div class="premium-card project-card">
-                        <div class="project-img">AI Asset Generator Preview</div>
-                        <h3 class="card-title">AI Stock Asset Generator</h3>
-                        <p class="card-text">Engineered a prompt system to create high-demand minimalist vector icons for stock platforms ensuring high acceptance rates.</p>
-                        <div class="tags"><span class="tag tag-pink">AI Prompts</span><span class="tag tag-pink">Python</span></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="window">
-            <div class="title-bar">
-                <div class="mac-btns">
-                    <button class="mac-btn close-btn"></button>
-                    <button class="mac-btn min-btn" onclick="nextWindow()"></button>
-                    <button class="mac-btn max-btn"></button>
-                </div>
-                <div class="address-bar"><span>Mehedi Hasan Tuhin- Education</span></div>
-            </div>
-            <div class="window-content generic-content">
-                <h1 style="font-size: 3rem;">Academic <span class="highlight">Background</span></h1>
-                <div class="timeline" style="margin-top: 40px;">
-                    <div class="timeline-item">
-                        <h3 class="card-title" style="color: var(--accent-purple);">B.Sc. in Software Engineering</h3>
-                        <h4 style="color: var(--text-main); margin-top: 5px;">Daffodil International University</h4>
-                        <p class="card-text" style="margin-top: 10px;">Focusing on core engineering principles, system architecture, and information systems security.</p>
-                    </div>
-                    <div class="timeline-item">
-                        <h3 class="card-title" style="color: var(--accent-pink);">Higher Secondary Certificate</h3>
-                        <h4 style="color: var(--text-main); margin-top: 5px;">Science Background</h4>
-                        <p class="card-text" style="margin-top: 10px;">Strong foundation in physics, advanced mathematics, and computer studies.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="window">
-            <div class="title-bar">
-                <div class="mac-btns">
-                    <button class="mac-btn close-btn"></button>
-                    <button class="mac-btn min-btn" onclick="nextWindow()"></button>
-                    <button class="mac-btn max-btn"></button>
-                </div>
-                <div class="address-bar"><span>Mehedi Hasan Tuhin- Certificates</span></div>
-            </div>
-            <div class="window-content generic-content">
-                <h1 style="font-size: 3rem;">Licenses & <span class="highlight">Certificates</span></h1>
-                <div class="content-grid" style="margin-top: 30px;">
-                    <div class="premium-card">
-                        <h3 class="card-title">Machine Learning Foundations</h3>
-                        <p class="card-text">Comprehensive study of classification models (KNN) and data processing methodologies.</p>
-                    </div>
-                    <div class="premium-card">
-                        <h3 class="card-title">Software Architecture</h3>
-                        <p class="card-text">Advanced architectural view models, system design, and security implementations.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="window">
-            <div class="title-bar">
-                <div class="mac-btns">
-                    <button class="mac-btn close-btn"></button>
-                    <button class="mac-btn min-btn" onclick="nextWindow()"></button>
-                    <button class="mac-btn max-btn"></button>
-                </div>
-                <div class="address-bar"><span>Mehedi Hasan Tuhin- Contact</span></div>
-            </div>
-            <div class="window-content generic-content">
-                <h1 style="font-size: 3rem;">Let's <span class="highlight">Connect</span></h1>
-                <div class="content-grid" style="margin-top: 30px;">
-                    <div>
-                        <p class="card-text" style="margin-bottom: 20px;">I'm always open to discussing application development, automation scripting, or new engineering opportunities.</p>
-                        <ul class="contact-list">
-                            <li>📧 mehedihasan54782@gmail.com</li>
-                            <li>🐙 github.com/MEHEDI1891</li>
-                            <li>💼 linkedin.com/in/mehedihasan192</li>
-                            <li>📍 savar cantonment, Dhaka</li>
-                        </ul>
-                    </div>
-                    <div class="premium-card form-card">
-                        <input type="text" placeholder="Your Name" class="input-field">
-                        <input type="email" placeholder="Your Email" class="input-field">
-                        <textarea rows="4" placeholder="Your Message" class="input-field"></textarea>
-                        <button class="btn btn-primary" style="width: 100%;">Send Message</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+    <div class="nav-controls">
+        <button class="nav-btn nav-prev" id="navPrev">←</button>
+        <div class="window-indicator"><span id="currentWindow">1</span>/7</div>
+        <button class="nav-btn nav-next" id="navNext">→</button>
     </div>
 
-    <div class="floating-nav">
-        <button class="nav-arrow" onclick="prevWindow()" title="Go Back">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-            Prev
-        </button>
-        <button class="nav-arrow" onclick="nextWindow()" title="Go Forward">
-            Next
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </button>
+    <div class="window-stack">
+        <div class="window active" data-window="0">
+            <div class="window-header">
+                <div class="window-controls">
+                    <button class="control-btn minimize-btn"></button>
+                    <button class="control-btn maximize-btn"></button>
+                    <button class="control-btn close-btn"></button>
+                </div>
+                <div class="window-title">HOME</div>
+            </div>
+            <div class="window-content">
+                <div class="home-container">
+                    <div class="home-left">
+                        <p style="font-size: 26px; margin-bottom: 8px;">Hi,</p>
+                        <h1 class="name">I'm Mehedi</h1>
+                        <h2 class="title">Software Engineer & AI Enthusiast</h2>
+                        <p style="color: rgba(224, 224, 224, 0.6); margin-bottom: 36px;">Crafting elegant solutions through code and innovation</p>
+                        <div style="display: flex; gap: 20px; margin-bottom: 50px;">
+                            <button class="btn btn-primary">My Work</button>
+                            <button class="btn btn-secondary">Hire Me</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="window" data-window="1">
+            <div class="window-header">
+                <div class="window-controls">
+                    <button class="control-btn minimize-btn"></button>
+                    <button class="control-btn maximize-btn"></button>
+                    <button class="control-btn close-btn"></button>
+                </div>
+                <div class="window-title">ABOUT ME</div>
+            </div>
+            <div class="window-content">
+                <h2 style="font-size: 40px; margin-bottom: 24px; background: linear-gradient(135deg, #c77dff 0%, #ff4db8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Who Am I?</h2>
+                <p style="font-size: 16px; line-height: 1.8; margin-bottom: 40px; color: rgba(224, 224, 224, 0.75);">I'm a passionate software engineer with expertise in modern web technologies and AI/ML.</p>
+                <div class="about-grid">
+                    <div class="about-card">
+                        <div class="card-number">01</div>
+                        <h3 style="font-size: 22px; margin-bottom: 14px; font-weight: 700;">Background</h3>
+                        <p>Full-stack developer with 3+ years of experience</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="card-number">02</div>
+                        <h3 style="font-size: 22px; margin-bottom: 14px; font-weight: 700;">Passion</h3>
+                        <p>Driven by innovation and continuous learning</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="card-number">03</div>
+                        <h3 style="font-size: 22px; margin-bottom: 14px; font-weight: 700;">Goals</h3>
+                        <p>Create impactful digital experiences</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="card-number">04</div>
+                        <h3 style="font-size: 22px; margin-bottom: 14px; font-weight: 700;">Experience</h3>
+                        <p>Collaborated with startups and enterprises</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="window" data-window="2">
+            <div class="window-header">
+                <div class="window-controls">
+                    <button class="control-btn minimize-btn"></button>
+                    <button class="control-btn maximize-btn"></button>
+                    <button class="control-btn close-btn"></button>
+                </div>
+                <div class="window-title">SKILLS</div>
+            </div>
+            <div class="window-content">
+                <h3 style="font-size: 26px; margin-bottom: 28px; color: #c77dff; font-weight: 700;">Frontend</h3>
+                <div class="skills-grid">
+                    <div class="skill-card"><div style="font-size: 36px; margin-bottom: 8px;">🎨</div><span>HTML5</span><div class="progress-bar"><div class="progress" style="width: 95%"></div></div></div>
+                    <div class="skill-card"><div style="font-size: 36px; margin-bottom: 8px;">🎭</div><span>CSS3</span><div class="progress-bar"><div class="progress" style="width: 92%"></div></div></div>
+                    <div class="skill-card"><div style="font-size: 36px; margin-bottom: 8px;">⚡</div><span>JavaScript</span><div class="progress-bar"><div class="progress" style="width: 90%"></div></div></div>
+                    <div class="skill-card"><div style="font-size: 36px; margin-bottom: 8px;">⚛️</div><span>React</span><div class="progress-bar"><div class="progress" style="width: 88%"></div></div></div>
+                </div>
+                <h3 style="font-size: 26px; margin: 50px 0 28px 0; color: #c77dff; font-weight: 700;">Backend & AI/ML</h3>
+                <div class="skills-grid">
+                    <div class="skill-card"><div style="font-size: 36px; margin-bottom: 8px;">🐍</div><span>Python</span><div class="progress-bar"><div class="progress" style="width: 93%"></div></div></div>
+                    <div class="skill-card"><div style="font-size: 36px; margin-bottom: 8px;">🤖</div><span>Machine Learning</span><div class="progress-bar"><div class="progress" style="width: 85%"></div></div></div>
+                    <div class="skill-card"><div style="font-size: 36px; margin-bottom: 8px;">🔗</div><span>Node.js</span><div class="progress-bar"><div class="progress" style="width: 87%"></div></div></div>
+                    <div class="skill-card"><div style="font-size: 36px; margin-bottom: 8px;">🗄️</div><span>SQL/NoSQL</span><div class="progress-bar"><div class="progress" style="width: 89%"></div></div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="window" data-window="3">
+            <div class="window-header">
+                <div class="window-controls">
+                    <button class="control-btn minimize-btn"></button>
+                    <button class="control-btn maximize-btn"></button>
+                    <button class="control-btn close-btn"></button>
+                </div>
+                <div class="window-title">PROJECTS</div>
+            </div>
+            <div class="window-content">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-aeb19be489c7?w=400&h=250&fit=crop" alt="AI Dashboard">
+                    </div>
+                    <div class="project-info">
+                        <h3>AI-Powered Dashboard</h3>
+                        <p>An intelligent analytics dashboard with ML-powered insights and real-time data visualization.</p>
+                        <div style="display: flex; gap: 8px; margin: 12px 0;">
+                            <span style="background: rgba(157, 78, 221, 0.2); color: #c77dff; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 700;">React</span>
+                            <span style="background: rgba(157, 78, 221, 0.2); color: #c77dff; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 700;">Python</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=400&h=250&fit=crop" alt="E-Commerce">
+                    </div>
+                    <div class="project-info">
+                        <h3>Full-Stack E-Commerce</h3>
+                        <p>Complete e-commerce platform with payment integration and admin panel.</p>
+                        <div style="display: flex; gap: 8px; margin: 12px 0;">
+                            <span style="background: rgba(157, 78, 221, 0.2); color: #c77dff; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 700;">Next.js</span>
+                            <span style="background: rgba(157, 78, 221, 0.2); color: #c77dff; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 700;">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="window" data-window="4">
+            <div class="window-header">
+                <div class="window-controls">
+                    <button class="control-btn minimize-btn"></button>
+                    <button class="control-btn maximize-btn"></button>
+                    <button class="control-btn close-btn"></button>
+                </div>
+                <div class="window-title">EDUCATION</div>
+            </div>
+            <div class="window-content">
+                <div class="education-item">
+                    <div class="education-marker"></div>
+                    <div>
+                        <h3 style="font-size: 20px; font-weight: 700;">Bachelor of Science in Computer Science</h3>
+                        <p style="font-size: 15px; color: #c77dff; margin: 6px 0; font-weight: 600;">University Name</p>
+                        <p style="font-size: 14px; color: rgba(224, 224, 224, 0.6); margin-bottom: 14px;">CGPA: 3.8/4.0 • Graduated: 2023</p>
+                    </div>
+                </div>
+                <div class="education-item">
+                    <div class="education-marker"></div>
+                    <div>
+                        <h3 style="font-size: 20px; font-weight: 700;">Advanced Machine Learning Specialization</h3>
+                        <p style="font-size: 15px; color: #c77dff; margin: 6px 0; font-weight: 600;">Coursera - Stanford University</p>
+                        <p style="font-size: 14px; color: rgba(224, 224, 224, 0.6);">Completed: 2023</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="window" data-window="5">
+            <div class="window-header">
+                <div class="window-controls">
+                    <button class="control-btn minimize-btn"></button>
+                    <button class="control-btn maximize-btn"></button>
+                    <button class="control-btn close-btn"></button>
+                </div>
+                <div class="window-title">CERTIFICATES</div>
+            </div>
+            <div class="window-content">
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px;">
+                    <div class="cert-card">
+                        <div class="cert-image">
+                            <img src="https://images.unsplash.com/photo-1516534775068-bb6c2dc8e5a4?w=300&h=200&fit=crop" alt="AWS">
+                        </div>
+                        <div style="padding: 24px;">
+                            <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">AWS Certified Solutions Architect</h3>
+                            <p style="font-size: 14px; color: #c77dff; font-weight: 600; margin-bottom: 4px;">Amazon Web Services</p>
+                            <p style="font-size: 13px; color: rgba(224, 224, 224, 0.6);">Issued: December 2023</p>
+                        </div>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-image">
+                            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=300&h=200&fit=crop" alt="Google">
+                        </div>
+                        <div style="padding: 24px;">
+                            <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">Google Cloud Professional Data Engineer</h3>
+                            <p style="font-size: 14px; color: #c77dff; font-weight: 600; margin-bottom: 4px;">Google Cloud</p>
+                            <p style="font-size: 13px; color: rgba(224, 224, 224, 0.6);">Issued: October 2023</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="window" data-window="6">
+            <div class="window-header">
+                <div class="window-controls">
+                    <button class="control-btn minimize-btn"></button>
+                    <button class="control-btn maximize-btn"></button>
+                    <button class="control-btn close-btn"></button>
+                </div>
+                <div class="window-title">CONTACT</div>
+            </div>
+            <div class="window-content">
+                <div class="contact-container">
+                    <div>
+                        <h2 style="font-size: 36px; margin-bottom: 18px; background: linear-gradient(135deg, #c77dff 0%, #ff4db8 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800;">Get In Touch</h2>
+                        <p style="font-size: 16px; color: rgba(224, 224, 224, 0.7); margin-bottom: 36px;">I'm interested in new projects and opportunities.</p>
+                        <div style="display: flex; flex-direction: column; gap: 24px;">
+                            <div style="display: flex; gap: 18px;">
+                                <div style="font-size: 32px;">📧</div>
+                                <div>
+                                    <h4 style="font-size: 15px; font-weight: 700; margin-bottom: 4px;">Email</h4>
+                                    <a href="mailto:mehedi@example.com" style="font-size: 15px; color: rgba(224, 224, 224, 0.7); text-decoration: none;">mehedi@example.com</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <form>
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="text" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Message</label>
+                                <textarea rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="script.js"></script>
