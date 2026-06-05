@@ -2,9 +2,9 @@
 const windows = Array.from(document.querySelectorAll('.window'));
 let currentIndex = 0;
 
-// Visual constants for the stacking effect
-const scaleStep = 0.05;
-const translateYStep = 45; // Pixels to move down per layer
+// Visual constants for the stacking effect behind the main window
+const scaleStep = 0.06;
+const translateYStep = 55; 
 
 // Function to calculate and apply the position of every window
 function updateStack() {
@@ -23,25 +23,25 @@ function updateStack() {
             win.style.pointerEvents = 'auto';
         } 
         else {
-            // Stacked Windows (below active)
+            // Stacked Windows (peeking out from behind the active one)
             const offset = index - currentIndex;
             win.className = 'window';
             win.style.transform = `translateY(${offset * translateYStep}px) scale(${1 - (offset * scaleStep)})`;
             win.style.zIndex = 100 - offset;
             
             // Fade out slightly the further back it is
-            win.style.opacity = 1 - (offset * 0.15); 
-            win.style.pointerEvents = 'none'; // Prevent clicking background windows
+            win.style.opacity = 1 - (offset * 0.2); 
+            win.style.pointerEvents = 'none'; 
         }
     });
 }
 
 // Attach click events to all the yellow minimize buttons
-windows.forEach((win, index) => {
+windows.forEach((win) => {
     const minBtn = win.querySelector('.min-btn');
     if(minBtn) {
         minBtn.addEventListener('click', (e) => {
-            e.stopPropagation(); // prevent bubbling
+            e.stopPropagation(); 
             minimizeCurrent();
         });
     }
@@ -55,7 +55,7 @@ function minimizeCurrent() {
     }
 }
 
-// Jumps directly to a specific window (used by the 'Hire Me' button)
+// Jumps directly to a specific window (used by the 'RESUME' and 'Hire Me' buttons)
 function minimizeTo(targetId) {
     if(targetId === 'contact') {
         currentIndex = windows.length - 1;
